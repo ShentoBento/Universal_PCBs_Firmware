@@ -41,7 +41,7 @@ Want to edit the keymap before flashing? Compile it from source.
    ```
    make git-submodule
    ```
-5. Copy the `shentobento` folder from this repo into `qmk_firmware/keyboards/`, so the path looks like:
+5. Copy the contents of the 'shentobento_uni60_via' folder folder from this repo into `qmk_firmware/keyboards/shentobento/uni60`, so the path looks like:
    ```
    qmk_firmware/keyboards/shentobento/uni60/
    ```
