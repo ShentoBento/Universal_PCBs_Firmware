@@ -1,0 +1,6 @@
+VIA_ENABLE = yes
+EXTRAKEY_ENABLE = yes
+BOOTMAGIC_ENABLE = yes
+
+
+
