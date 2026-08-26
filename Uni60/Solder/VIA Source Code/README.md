@@ -70,7 +70,7 @@ Want to edit the keymap before flashing? Compile it from source.
    ```
    make git-submodule
    ```
-6. Copy the `shentobento` folder from this repo into `qmk_firmware/keyboards/`, so the path looks like:
+6. Copy the contents of the `shentobento_uni60_solder` folder from this repo into `qmk_firmware/keyboards/shentobento/uni60`, so the path looks like:
    ```
    qmk_firmware/keyboards/shentobento/uni60/
    ```
@@ -85,7 +85,7 @@ Want to edit the keymap before flashing? Compile it from source.
 Go to [usevia.app](https://usevia.app) in a Chromium-based browser (Chrome, Edge, Brave — Firefox and Safari don't support the WebHID connection VIA needs). This firmware isn't in VIA's official keyboard database, so there's one extra one-time step before it's recognized:
 
 1. Click the gear icon (Settings) → toggle **Show Design Tab** on.
-2. Go to the Design tab (brush icon) → **Load Draft Definition** → select `uni60.json` (included in this repo).
+2. Go to the Design tab (brush icon) → **Load Draft Definition** → select `uni60_VIA.json` (included in this repo).
 3. Switch back to the Configure tab → **Authorize Device** → select your keyboard.
 
 From there you can remap keys, set up macros, and more, all without reflashing. VIA remembers the loaded definition afterward, so you only need to do this once per browser.
@@ -98,34 +98,7 @@ Doing this first matters: the keymap grid redraws to match, so you'll be remappi
 
 ## Default keymap
 
-The board ships as a standard ANSI 60% with a 2u backspace, split right shift and a 7u bottom row. Fn is the 1u key to the right of the right shift.
-
-Holding Fn gives you:
-
-| Fn + | Result |
-| --- | --- |
-| Esc | ` ~ |
-| 1 – = | F1 – F12 |
-| Backspace | Delete |
-| `[` | Up |
-| `;` `'` | Left, Right |
-| `/` | Down |
-| Right Shift | Page Up |
-| Right Alt, Right GUI, Right Ctrl | Home, Page Down, End |
-
-Layer 2 is empty and layer 3 is unused — both are yours to fill in.
-
-## Notes on specific layouts
-
-**Split backspace.** The 2u backspace footprint is wired in parallel with the *left* of the two 1u positions, so out of the box you get Backspace on the left and Delete on the right. If you'd rather have `\ |` up there, remap the left key to `\` and move Backspace down to the 1.5u key in the Tab row.
-
-**ISO enter.** The extra key at the end of the home row defaults to `\ |`. Remap it to **Non-US #** (`KC_NUHS`) to get `# ~` as ISO expects.
-
-**Split left shift.** The new 1u key is already set to **Non-US \\** (`KC_NUBS`) — the `< >` key on German layouts and `\ |` on UK.
-
-**Full right shift.** This removes the default Fn key. If you're on a 6.25u-based bottom row there's a second Fn on the key immediately right of the spacebar. On a 7u bottom row there isn't one, so assign Fn (`MO(1)`) to a key of your choice or you'll have no way to reach layer 1.
-
-**Split spacebars.** On the 6.25u split and 7u split bottom rows, the left segment is Backspace and both the small middle key and the right segment are Space. The middle key has to default to Space because it shares wiring with the full-size spacebar on every other bottom row — remap it to Fn or whatever you like.
+The board ships as a standard ANSI 60% with a 2u backspace, split right shift and a 7u bottom row.
 
 **N-key rollover.** NKRO is compiled in but off by default, since some BIOS and UEFI screens don't handle it. To turn it on, assign `NK_TOGG` to a key in VIA, press it once, then remap that key back to whatever you wanted. The setting is stored on the board.
 
