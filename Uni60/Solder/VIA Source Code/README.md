@@ -99,7 +99,3 @@ Doing this first matters: the keymap grid redraws to match, so you'll be remappi
 ## Default keymap
 
 The board ships as a standard ANSI 60% with a 2u backspace, split right shift and a 7u bottom row.
-
-**N-key rollover.** NKRO is compiled in but off by default, since some BIOS and UEFI screens don't handle it. To turn it on, assign `NK_TOGG` to a key in VIA, press it once, then remap that key back to whatever you wanted. The setting is stored on the board.
-
-**Getting back into the bootloader.** Besides holding Esc while plugging in or using the BOOT button, you can assign VIA's `QK_BOOT` (listed under Special) to a key.
